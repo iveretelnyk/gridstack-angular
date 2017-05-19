@@ -22,6 +22,13 @@ app.directive('gridstack', ['$timeout', function($timeout) {
       var gridstack = controller.init(element, scope.options);
       scope.gridstackHandler = gridstack;
 
+      element.on('added', function(e, items) {
+        $timeout(function() {
+          scope.$apply();
+          scope.onAdded({event: e, items: items});
+        });
+      });
+      
       element.on('change', function(e, items) {
         $timeout(function() {
           scope.$apply();
