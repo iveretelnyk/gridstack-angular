@@ -29,7 +29,7 @@ app.directive('gridstack', ['$timeout', function($timeout) {
           scope.onAdded({event: e, items: items});
         });
       });
-      
+
       element.on('change', function(e, items) {
         $timeout(function() {
           scope.$apply();
