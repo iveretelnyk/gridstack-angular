@@ -10,6 +10,7 @@ app.directive('gridstack', ['$timeout', function($timeout) {
     controller: 'GridstackController',
     scope: {
       onChange: '&',
+      onAdded: '&',
       onDragStart: '&',
       onDragStop: '&',
       onResizeStart: '&',
